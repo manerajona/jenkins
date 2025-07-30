@@ -51,3 +51,6 @@ jobs/**/*workspace
 
 # IDE
 .idea
+
+### Mac OS ###
+.DS_Store
