@@ -54,3 +54,9 @@ jobs/**/*workspace
 
 ### Mac OS ###
 .DS_Store
+
+### Maven ###
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/

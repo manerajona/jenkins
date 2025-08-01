@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+    environment {
+            MAVEN_SETTINGS = './settings.xml'
+    }
+    stages {
+        stage('Build') {
+            steps {
+                sh "cd maven-pipeline && ./mvnw -U -s ${MAVEN_SETTINGS} install -DskipTests"
+            }
+        }
+        stage('Test') {
+            steps {
+                sh "cd maven-pipeline && ./mvnw verify -s ${MAVEN_SETTINGS}"
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+}
